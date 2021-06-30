@@ -4,10 +4,10 @@
   "description": "This is a RPG platform game using phaser",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --mode development --entry ./src/game.js",
-    "build": "webpack --mode production --entry ./src/game.js --output ./dist/game.js",
-    "dev": "webpack --mode development --entry ./src/game.js --output ./dist/game.js"
+    "test": "start",
+    "build": "webpack --mode production",
+    "start": "webpack serve --open",
+    "lint": "eslint src/** --fix"
   },
   "repository": {
     "type": "git",
