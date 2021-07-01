@@ -9,12 +9,12 @@ module.exports = {
     app: './src/index.js',
   },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: 'app.bundle.js',
+    path: path.resolve(__dirname, 'build'),
     clean: true,
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
+    contentBase: path.resolve(__dirname, 'build'),
   },
   module: {
     rules: [
@@ -48,11 +48,11 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, 'index.html'),
-          to: path.resolve(__dirname, 'dist'),
+          to: path.resolve(__dirname, 'build'),
         },
         {
           from: path.resolve(__dirname, 'assets', '**', '*'),
-          to: path.resolve(__dirname, 'dist'),
+          to: path.resolve(__dirname, 'build'),
         },
       ],
     }),

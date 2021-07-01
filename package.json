@@ -4,10 +4,10 @@
   "description": "This is a RPG platform game using phaser",
   "main": "index.js",
   "scripts": {
-    "test": "start",
-    "build": "webpack --mode production",
+    "test": "jest",
+    "watch": "webpack --watch",
     "start": "webpack serve --open",
-    "lint": "eslint src/** --fix"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
