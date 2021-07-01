@@ -1,37 +1,16 @@
-import { Scene } from 'phaser';
+import Phaser from 'phaser';
 
-class GameScene extends Scene {
+export default class GameScene extends Phaser.Scene {
   constructor() {
-    super('scene-game');
+    super('Game');
+  }
+
+  preload() {
+    // load images
+    this.load.image('logo', 'assets/logo.png');
   }
 
   create() {
-    // Add, scale, and make up a speed for our creature
-    this.cat = this.physics.add.sprite(10, 10, 'cat-like');
-    this.cat.body.setAllowGravity(false);
-    this.cat.setScale(0.5);
-    this.catSpeed = 300;
-    // Create a helper object for our arrow keys
-    this.cursors = this.input.keyboard.createCursorKeys();
-  }
-
-  update() {
-    // Listen for keyboard input
-    const { left, right, up, down } = this.cursors;
-    if (left.isDown) {
-      this.cat.setVelocityX(-this.catSpeed);
-    } else if (right.isDown) {
-      this.cat.setVelocityX(this.catSpeed);
-    } else {
-      this.cat.setVelocityX(0);
-    }
-    if (up.isDown) {
-      this.cat.setVelocityY(-this.catSpeed);
-    } else if (down.isDown) {
-      this.cat.setVelocityY(this.catSpeed);
-    } else {
-      this.cat.setVelocityY(0);
-    }
+    this.add.image(400, 300, 'logo');
   }
 }
-export default GameScene;

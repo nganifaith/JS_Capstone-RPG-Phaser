@@ -1,22 +1,14 @@
 import './styles.css';
-import Phaser, { Game } from 'phaser';
-import BootScene from './scenes/BootScene';
-import GameScene from './scenes/GameScene';
+import Phaser from 'phaser';
+import config from './Config/config';
+import GameScene from './Scenes/GameScene';
 
-const canvas = document.getElementById('game-canvas');
-const config = {
-  type: Phaser.WEB_GL,
-  width: 400,
-  height: 300,
-  canvas,
-  physics: {
-    default: 'arcade',
-    arcade: {
-      gravity: { y: 400 },
-      debug: true,
-    },
-  },
-  scene: [BootScene, GameScene],
-};
+class Game extends Phaser.Game {
+  constructor() {
+    super(config);
+    this.scene.add('Game', GameScene);
+    this.scene.start('Game');
+  }
+}
 
-const game = new Game(config);
+window.game = new Game();
