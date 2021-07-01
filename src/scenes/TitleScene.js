@@ -15,7 +15,7 @@ export default class TitleScene extends Phaser.Scene {
       fontSize: '32px',
       fill: '#fff',
     });
-    this.centerButtonText(this.gameText, this.gameButton);
+    TitleScene.centerButtonText(this.gameText, this.gameButton);
 
     this.gameButton.on('pointerdown', () => {
       this.scene.start('Game');
@@ -31,7 +31,7 @@ export default class TitleScene extends Phaser.Scene {
       fontSize: '32px',
       fill: '#fff',
     });
-    this.centerButtonText(this.optionsText, this.optionsButton);
+    TitleScene.centerButtonText(this.optionsText, this.optionsButton);
 
     this.optionsButton.on('pointerdown', () => {
       this.scene.start('Options');
@@ -47,7 +47,7 @@ export default class TitleScene extends Phaser.Scene {
       fontSize: '32px',
       fill: '#fff',
     });
-    this.centerButtonText(this.creditsText, this.creditsButton);
+    TitleScene.centerButtonText(this.creditsText, this.creditsButton);
 
     this.creditsButton.on('pointerdown', () => {
       this.scene.start('Credits');
