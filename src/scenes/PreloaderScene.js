@@ -9,13 +9,6 @@ export default class PreloaderScene extends Phaser.Scene {
     this.readyCount = 0;
   }
 
-  ready() {
-    this.readyCount += 1;
-    if (this.readyCount === 2) {
-      this.scene.start('Title');
-    }
-  }
-
   preload() {
     // add logo image
     this.add.image(400, 200, 'logo');
@@ -63,7 +56,7 @@ export default class PreloaderScene extends Phaser.Scene {
 
     // update progress bar
     this.load.on('progress', (value) => {
-      percentText.setText(`${parseInt(value * 100, 2)} %`);
+      percentText.setText(`${parseInt(value * 100, 2)}%`);
       progressBar.clear();
       progressBar.fillStyle(0xffffff, 1);
       progressBar.fillRect(250, 280, 300 * value, 30);
@@ -75,23 +68,31 @@ export default class PreloaderScene extends Phaser.Scene {
     });
 
     // remove progress bar when complete
-    this.load
-      .on('complete', () => {
-        progressBar.destroy();
-        progressBox.destroy();
-        loadingText.destroy();
-        percentText.destroy();
-        assetText.destroy();
-        this.ready();
-      })
-      .bind(this);
+    this.load.on('complete', () => {
+      progressBar.destroy();
+      progressBox.destroy();
+      loadingText.destroy();
+      percentText.destroy();
+      assetText.destroy();
+      this.ready();
+    });
 
     this.timedEvent = this.time.delayedCall(3000, this.ready, [], this);
 
     // load assets needed in our game
+    this.load.image('blueButton1', 'assets/ui/blue_button02.png');
+    this.load.image('blueButton2', 'assets/ui/blue_button03.png');
     this.load.image('phaserLogo', 'assets/logo.png');
     this.load.image('box', 'assets/ui/grey_box.png');
     this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
     this.load.audio('bgMusic', ['assets/TownTheme.mp3']);
+  }
+
+  ready() {
+    this.scene.start('Options');
+    this.readyCount += 1;
+    if (this.readyCount === 2) {
+      this.scene.start('Title');
+    }
   }
 }
