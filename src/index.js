@@ -23,7 +23,6 @@ class Game extends Phaser.Game {
     this.scene.start('Boot');
   }
 }
-window.game = new Game();
 
 function resize() {
   const canvas = document.querySelector('canvas');
@@ -41,6 +40,7 @@ function resize() {
 }
 
 window.onload = () => {
+  window.game = new Game();
   window.focus();
   resize();
   window.addEventListener('resize', resize, false);
