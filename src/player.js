@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 export default class Player {
   constructor() {
-    this._name = '';
+    this._name = 'Faith';
     this._currentScore = 0;
     this._highScore = 0;
     this.playTime = null;
@@ -35,7 +35,7 @@ export default class Player {
     this.currentScore = 0;
     this.playTime = setInterval(() => {
       this.currentScore += 1;
-    }, 1000);
+    }, 100);
   }
 
   stopScoring() {
