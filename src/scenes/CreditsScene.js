@@ -57,7 +57,7 @@ export default class CreditsScene extends Phaser.Scene {
       duration: 3000,
       delay: 1000,
       onComplete: () => {
-        this.destroy();
+        this.creditsTween.stop();
       },
     });
 
@@ -68,7 +68,7 @@ export default class CreditsScene extends Phaser.Scene {
       duration: 8000,
       delay: 1000,
       onComplete: () => {
-        this.currentScoreTween.destroy();
+        this.currentScoreTween.stop();
       },
     });
 
@@ -79,7 +79,7 @@ export default class CreditsScene extends Phaser.Scene {
       duration: 13000,
       delay: 1000,
       onComplete: () => {
-        this.highScoreTween.destroy();
+        this.highScoreTween.stop();
       },
     });
 
@@ -90,7 +90,7 @@ export default class CreditsScene extends Phaser.Scene {
       duration: 18000,
       delay: 1000,
       onComplete: () => {
-        this.madeByTween.destroy();
+        this.madeByTween.stop();
         this.scene.start('Title');
       },
     });
