@@ -8,6 +8,9 @@ export default class GameScene extends Phaser.Scene {
 
   preload() {
     // load images
+    this.load.image('mountains-back', 'assets/mountains-back.png');
+    this.load.image('mountains-mid1', 'assets/mountains-mid1.png');
+    this.load.image('mountains-mid2', 'assets/mountains-mid2.png');
     this.load.image('platform', 'assets/platform.png');
     this.load.spritesheet('player', 'assets/dude.png', {
       frameWidth: 32,
@@ -32,13 +35,47 @@ export default class GameScene extends Phaser.Scene {
     platform.displayWidth = platformWidth;
     this.nextPlatformDistance = Phaser.Math.Between(
       this.model.spawnRange[0],
-      this.model.spawnRange[1]
+      this.model.spawnRange[1],
     );
   }
 
   create() {
+    this.physics.startSystem(Phaser.Physics.ARCADE);
+
     this.model = this.sys.game.globals.model;
     this.runner = this.sys.game.globals.player;
+
+    // Set the games background colour
+    this.cameras.main.setBackgroundColor('#697e96');
+    const { width, height } = config;
+
+    // this.mountainsBack = this.add.image(0, 0, 'mountains-back').setOrigin(0, 0);
+
+    this.mountainsBack = this.add.tileSprite(
+      0,
+      height - this.textures.get('mountains-back').getSourceImage().height,
+      width,
+      this.textures.get('mountains-back').getSourceImage().height,
+      'mountains-back',
+    );
+
+    // this.mountainsMid1 = this.add.tileSprite(
+    //   0,
+    //   this.game.height -
+    //     this.textures.get('mountains-mid1').getSourceImage().height,
+    //   this.game.width,
+    //   this.textures.get('mountains-mid1').getSourceImage().height,
+    //   'mountains-mid1'
+    // );
+
+    // this.mountainsMid2 = this.add.tileSprite(
+    //   0,
+    //   this.game.height -
+    //     this.textures.get('mountains-mid2').getSourceImage().height,
+    //   this.game.width,
+    //   this.textures.get('mountains-mid2').getSourceImage().height,
+    //   'mountains-mid2'
+    // );
 
     this.platformGroup = this.add.group({
       // once a platform is removed, it's added to the pool
@@ -70,7 +107,7 @@ export default class GameScene extends Phaser.Scene {
     this.player = this.physics.add.sprite(
       this.model.playerStartPosition,
       config.height / 2,
-      'player'
+      'player',
     );
     this.player.setGravityY(this.model.playerGravity);
     this.player.anims.play('right', true);
@@ -98,8 +135,8 @@ export default class GameScene extends Phaser.Scene {
 
   jump() {
     if (
-      this.player.body.touching.down ||
-      (this.playerJumps > 0 && this.playerJumps < this.model.jumps)
+      this.player.body.touching.down
+      || (this.playerJumps > 0 && this.playerJumps < this.model.jumps)
     ) {
       if (this.player.body.touching.down) {
         this.playerJumps = 0;
@@ -116,13 +153,16 @@ export default class GameScene extends Phaser.Scene {
       this.runner.stopScoring();
       this.highScore.setText(`HI ${this.runner.highScore}`);
     }
+    this.mountainsBack.x -= 0.05;
+    // this.mountainsMid1.x -= 0.3;
+    // this.mountainsMid2.x -= 0.75;
+
     this.player.x = this.model.playerStartPosition;
     this.scoreText.setText(this.runner.currentScore);
     // recycling platforms
     let minDistance = config.width;
     this.platformGroup.getChildren().forEach((platform) => {
-      const platformDistance =
-        config.width - platform.x - platform.displayWidth / 2;
+      const platformDistance = config.width - platform.x - platform.displayWidth / 2;
       minDistance = Math.min(minDistance, platformDistance);
       if (platform.x < -platform.displayWidth / 2) {
         this.platformGroup.killAndHide(platform);
@@ -134,7 +174,7 @@ export default class GameScene extends Phaser.Scene {
     if (minDistance > this.nextPlatformDistance) {
       const nextPlatformWidth = Phaser.Math.Between(
         this.model.platformSizeRange[0],
-        this.model.platformSizeRange[1]
+        this.model.platformSizeRange[1],
       );
       this.addPlatform(nextPlatformWidth, config.width + nextPlatformWidth / 2);
     }
