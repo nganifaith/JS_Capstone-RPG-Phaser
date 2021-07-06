@@ -4,7 +4,7 @@ export default class Model {
     this._soundOn = true;
     this._musicOn = false;
     this._bgMusicPlaying = false;
-    this._platformStartSpeed = 350;
+    this._platformStartSpeed = 250;
     this._spawnRange = [100, 350];
     this._platformSizeRange = [50, 250];
     this._playerGravity = 900;
