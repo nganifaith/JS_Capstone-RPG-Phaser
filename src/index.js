@@ -11,6 +11,7 @@ import {
   CreditsScene,
   OptionsScene,
   NameScene,
+  LeaderboardScene,
 } from './scenes';
 import Api from './Api';
 
@@ -20,7 +21,9 @@ class Game extends Phaser.Game {
     const model = new Model();
     const player = new Player();
     const api = new Api();
-    this.globals = { model, bgMusic: null, player, api };
+    this.globals = {
+      model, bgMusic: null, player, api,
+    };
     this.scene.add('Boot', BootScene);
     this.scene.add('Name', NameScene);
     this.scene.add('Preloader', PreloaderScene);
@@ -28,6 +31,8 @@ class Game extends Phaser.Game {
     this.scene.add('Options', OptionsScene);
     this.scene.add('Credits', CreditsScene);
     this.scene.add('Game', GameScene);
+    this.scene.add('Leaderboard', LeaderboardScene);
+
     this.scene.start('Boot');
   }
 }

@@ -25,7 +25,7 @@ export default class GameScene extends Phaser.Scene {
     platform.displayWidth = platformWidth;
     this.nextPlatformDistance = Phaser.Math.Between(
       this.model.spawnRange[0],
-      this.model.spawnRange[1]
+      this.model.spawnRange[1],
     );
   }
 
@@ -72,7 +72,7 @@ export default class GameScene extends Phaser.Scene {
     this.player = this.physics.add.sprite(
       this.model.playerStartPosition,
       config.height / 2,
-      'player'
+      'player',
     );
     this.player.setGravityY(this.model.playerGravity);
     this.player.anims.play('right', true);
@@ -109,8 +109,8 @@ export default class GameScene extends Phaser.Scene {
 
   jump() {
     if (
-      this.player.body.touching.down ||
-      (this.playerJumps > 0 && this.playerJumps < this.model.jumps)
+      this.player.body.touching.down
+      || (this.playerJumps > 0 && this.playerJumps < this.model.jumps)
     ) {
       if (this.player.body.touching.down) {
         this.playerJumps = 0;
@@ -142,8 +142,7 @@ export default class GameScene extends Phaser.Scene {
     // recycling platforms
     let minDistance = config.width;
     this.platformGroup.getChildren().forEach((platform) => {
-      const platformDistance =
-        config.width - platform.x - platform.displayWidth / 2;
+      const platformDistance = config.width - platform.x - platform.displayWidth / 2;
       minDistance = Math.min(minDistance, platformDistance);
       if (platform.x < -platform.displayWidth / 2) {
         this.platformGroup.killAndHide(platform);
@@ -155,7 +154,7 @@ export default class GameScene extends Phaser.Scene {
     if (minDistance > this.nextPlatformDistance) {
       const nextPlatformWidth = Phaser.Math.Between(
         this.model.platformSizeRange[0],
-        this.model.platformSizeRange[1]
+        this.model.platformSizeRange[1],
       );
       this.addPlatform(nextPlatformWidth, config.width + nextPlatformWidth / 2);
     }

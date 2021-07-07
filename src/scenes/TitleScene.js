@@ -16,7 +16,7 @@ export default class TitleScene extends Phaser.Scene {
       'blueButton1',
       'blueButton2',
       'Play',
-      'Game'
+      'Game',
     );
 
     // Options
@@ -27,7 +27,7 @@ export default class TitleScene extends Phaser.Scene {
       'blueButton1',
       'blueButton2',
       'Options',
-      'Options'
+      'Options',
     );
 
     // Credits
@@ -38,7 +38,7 @@ export default class TitleScene extends Phaser.Scene {
       'blueButton1',
       'blueButton2',
       'Credits',
-      'Credits'
+      'Credits',
     );
 
     this.optionsButton = new Button(
@@ -48,7 +48,7 @@ export default class TitleScene extends Phaser.Scene {
       'blueButton1',
       'blueButton2',
       'Scores',
-      'Leaderboard'
+      'Leaderboard',
     );
 
     this.optionsButton = new Button(
@@ -58,7 +58,7 @@ export default class TitleScene extends Phaser.Scene {
       'blueButton1',
       'blueButton2',
       'Logout',
-      'Name'
+      'Name',
     );
 
     this.model = this.sys.game.globals.model;

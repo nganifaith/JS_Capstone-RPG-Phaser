@@ -1,7 +1,6 @@
 export default class Api {
   constructor() {
-    this.baseUrl =
-      'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
+    this.baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
     this.gameId = 'bUiJgC0hdslAYf1iKJLR';
   }
 
@@ -21,5 +20,9 @@ export default class Api {
 
   createScore(user, score) {
     return this.post('scores', { user, score });
+  }
+
+  fetchScores() {
+    return fetch(`${this.baseUrl}games/${this.gameId}/scores`).then((res) => res.json());
   }
 }
