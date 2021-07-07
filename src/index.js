@@ -3,12 +3,14 @@ import Phaser from 'phaser';
 import config from './Config/config';
 import Model from './Model';
 import Player from './player';
-import GameScene from './Scenes/GameScene';
-import BootScene from './Scenes/BootScene';
-import PreloaderScene from './Scenes/PreloaderScene';
-import TitleScene from './Scenes/TitleScene';
-import OptionsScene from './Scenes/OptionsScene';
-import CreditsScene from './Scenes/CreditsScene';
+import {
+  GameScene,
+  TitleScene,
+  PreloaderScene,
+  BootScene,
+  CreditsScene,
+  OptionsScene,
+} from './Scenes';
 
 class Game extends Phaser.Game {
   constructor() {
