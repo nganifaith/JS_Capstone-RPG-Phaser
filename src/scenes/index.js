@@ -4,6 +4,7 @@ import CreditsScene from './CreditsScene';
 import OptionsScene from './OptionsScene';
 import PreloaderScene from './PreloaderScene';
 import BootScene from './BootScene';
+import NameScene from './NameScene';
 
 export {
   GameScene,
@@ -12,4 +13,5 @@ export {
   BootScene,
   CreditsScene,
   OptionsScene,
+  NameScene,
 };

@@ -6,6 +6,9 @@ export default {
   width: 1334,
   height: 750,
   backgroundColor: 0x444444,
+  dom: {
+    createContainer: true,
+  },
 
   // physics settings
   physics: {

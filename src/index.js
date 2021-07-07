@@ -10,15 +10,19 @@ import {
   BootScene,
   CreditsScene,
   OptionsScene,
+  NameScene,
 } from './scenes';
+import Api from './Api';
 
 class Game extends Phaser.Game {
   constructor() {
     super(config);
     const model = new Model();
     const player = new Player();
-    this.globals = { model, bgMusic: null, player };
+    const api = new Api();
+    this.globals = { model, bgMusic: null, player, api };
     this.scene.add('Boot', BootScene);
+    this.scene.add('Name', NameScene);
     this.scene.add('Preloader', PreloaderScene);
     this.scene.add('Title', TitleScene);
     this.scene.add('Options', OptionsScene);

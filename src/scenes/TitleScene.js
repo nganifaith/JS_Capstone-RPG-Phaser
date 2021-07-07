@@ -12,33 +12,53 @@ export default class TitleScene extends Phaser.Scene {
     this.gameButton = new Button(
       this,
       config.width / 2,
-      config.height / 2 - 100,
+      config.height / 2 - 200,
       'blueButton1',
       'blueButton2',
       'Play',
-      'Game',
+      'Game'
     );
 
     // Options
     this.optionsButton = new Button(
       this,
       config.width / 2,
-      config.height / 2,
+      config.height / 2 - 100,
       'blueButton1',
       'blueButton2',
       'Options',
-      'Options',
+      'Options'
     );
 
     // Credits
     this.creditsButton = new Button(
       this,
       config.width / 2,
-      config.height / 2 + 100,
+      config.height / 2,
       'blueButton1',
       'blueButton2',
       'Credits',
-      'Credits',
+      'Credits'
+    );
+
+    this.optionsButton = new Button(
+      this,
+      config.width / 2,
+      config.height / 2 + 100,
+      'blueButton1',
+      'blueButton2',
+      'Scores',
+      'Leaderboard'
+    );
+
+    this.optionsButton = new Button(
+      this,
+      config.width / 2,
+      config.height / 2 + 200,
+      'blueButton1',
+      'blueButton2',
+      'Logout',
+      'Name'
     );
 
     this.model = this.sys.game.globals.model;
