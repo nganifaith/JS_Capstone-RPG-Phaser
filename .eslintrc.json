@@ -16,7 +16,7 @@
     "eol-last": "off"
   },
 
-  "Settings": {
+  "settings": {
     "import/resolver": {
         "node": {
             "extensions": [".js", ".jsx"],
@@ -24,7 +24,7 @@
         }
     }
   },
-  
+
   "ignorePatterns": [
     "dist/",
     "build/"
