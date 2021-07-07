@@ -16,13 +16,15 @@
     "eol-last": "off"
   },
 
-  "import/resolver": {
-      "node": {
-          "extensions": [".js", ".jsx"],
-          "moduleDirectory": ["node_modules", "src/"],
-      }
+  "Settings": {
+    "import/resolver": {
+        "node": {
+            "extensions": [".js", ".jsx"],
+            "moduleDirectory": ["node_modules", "src/"]
+        }
+    }
   },
-
+  
   "ignorePatterns": [
     "dist/",
     "build/"
