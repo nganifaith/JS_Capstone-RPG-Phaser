@@ -4,8 +4,8 @@
 
 ## App
 
-![home](./assets/)
-![Dubia](./assets/)
+![home](./assets/home.png)
+![PlayGround](./assets/play.png)
 
 ## About
 
