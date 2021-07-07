@@ -37,4 +37,4 @@
 
 > ## API
 >
-> The Score submission and LeaderBoard retrival feature has been implemented using this API service.
+> The Score submission and LeaderBoard retrival feature has been implemented using this [API service](https://www.notion.so/Leaderboard-API-service-24c0c3c116974ac49488d4eb0267ade3).
