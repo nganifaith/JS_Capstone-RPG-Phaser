@@ -2,7 +2,7 @@
 export default class Model {
   constructor() {
     this._soundOn = true;
-    this._musicOn = false;
+    this._musicOn = true;
     this._bgMusicPlaying = false;
     this._platformStartSpeed = 250;
     this._spawnRange = [100, 350];
