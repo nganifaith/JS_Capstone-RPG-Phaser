@@ -9,7 +9,11 @@
 
 ## About
 
+This game implements a simple endless runner game whereby a runner score increases with time (after every 300ms). The game displays the user current score, High score and the user name on the game.
+
 ## Play Game
+
+Simple play game by using your mouse pad. Click to jump and run as far as you can go on the ground without falling off.
 
 ## Built With
 
