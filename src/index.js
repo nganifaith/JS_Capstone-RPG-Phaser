@@ -10,7 +10,7 @@ import {
   BootScene,
   CreditsScene,
   OptionsScene,
-} from './Scenes';
+} from './scenes';
 
 class Game extends Phaser.Game {
   constructor() {

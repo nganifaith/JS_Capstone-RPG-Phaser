@@ -52,7 +52,7 @@ export default class CreditsScene extends Phaser.Scene {
 
     this.creditsTween = this.tweens.add({
       targets: this.creditsText,
-      y: -100,
+      y: 100,
       ease: 'Power1',
       duration: 3000,
       delay: 1000,
@@ -63,10 +63,10 @@ export default class CreditsScene extends Phaser.Scene {
 
     this.currentScoreTween = this.tweens.add({
       targets: this.currentScoreText,
-      y: -300,
+      y: 200,
       ease: 'Power1',
-      duration: 8000,
-      delay: 1000,
+      duration: 3000,
+      delay: 2000,
       onComplete: () => {
         this.currentScoreTween.stop();
       },
@@ -74,10 +74,10 @@ export default class CreditsScene extends Phaser.Scene {
 
     this.highScoreTween = this.tweens.add({
       targets: this.highScoreText,
-      y: -500,
+      y: 300,
       ease: 'Power1',
-      duration: 13000,
-      delay: 1000,
+      duration: 3000,
+      delay: 3000,
       onComplete: () => {
         this.highScoreTween.stop();
       },
@@ -85,13 +85,13 @@ export default class CreditsScene extends Phaser.Scene {
 
     this.madeByTween = this.tweens.add({
       targets: this.madeByText,
-      y: -700,
+      y: 400,
       ease: 'Power1',
-      duration: 18000,
-      delay: 1000,
+      duration: 3000,
+      delay: 4000,
       onComplete: () => {
         this.madeByTween.stop();
-        this.scene.start('Title');
+        setTimeout(() => this.scene.start('Title'), 4000);
       },
     });
   }
