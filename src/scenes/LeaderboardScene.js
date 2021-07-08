@@ -32,7 +32,7 @@ export default class LeaderboardScene extends Phaser.Scene {
         ...this.texts,
         ...this.users.map((user, index) => this.add.text(
           config.width / 2 - 250,
-          (index + 1) * 50 + (index === 0 ? 100 : 0),
+          (index + 1) * 50 + 100,
           `${user.user}: ${user.score}`,
           {
             fontSize: '40px',
