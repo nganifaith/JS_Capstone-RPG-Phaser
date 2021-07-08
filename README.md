@@ -50,6 +50,7 @@ Knowledge about JS:
 
 - run `npm install`
 - run `npm start` in your command line
+- run `npm run test` to run test
 
 ## Live Site
 
