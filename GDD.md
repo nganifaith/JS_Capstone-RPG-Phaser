@@ -8,7 +8,7 @@
 
 - step 1: Learning about Phaser Library, following the tutorials, setup development environment and creating a basic template for the game.
 
-- step 2: Build a complete working game following the tutorials and playing around with different assets
+- step 2: Build a complete working game following the tutorials and playing around with different assets. This I implemented a coin collecting game. Player scores increasings as play collects more coins.
 
 - step 3: Designing game, collecting the assets and writing this GDD.
 

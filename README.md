@@ -15,6 +15,10 @@ This game implements a simple endless runner game whereby a runner score increas
 
 Simple play game by using your mouse pad. Click to jump and run as far as you can go on the ground without falling off.
 
+## Game Design Document
+
+Full details of the Game can be found here [GDD](./GDD.md)
+
 ## Built With
 
 - Javascript

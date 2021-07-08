@@ -5,7 +5,7 @@ import LeaderboardScene from '../scenes/LeaderboardScene';
 
 require('jest-canvas-mock');
 
-jest.mock('../Scenes/LeaderboardScene');
+jest.mock('../scenes/LeaderboardScene');
 
 beforeEach(() => {
   LeaderboardScene.mockClear();
