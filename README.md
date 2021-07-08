@@ -54,7 +54,11 @@ Knowledge about JS:
 
 - run `npm install`
 - run `npm start` in your command line
+
+## Test
+
 - run `npm run test` to run test
+  ![Results](./assets/test.png)
 
 ## Live Site
 

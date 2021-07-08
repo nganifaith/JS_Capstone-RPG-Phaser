@@ -22,7 +22,10 @@ class Game extends Phaser.Game {
     const player = new Player();
     const api = new Api();
     this.globals = {
-      model, bgMusic: null, player, api,
+      model,
+      bgMusic: null,
+      player,
+      api,
     };
     this.scene.add('Boot', BootScene);
     this.scene.add('Name', NameScene);
@@ -37,7 +40,7 @@ class Game extends Phaser.Game {
   }
 }
 
-function resize() {
+const resize = () => {
   const canvas = document.querySelector('canvas');
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
@@ -50,7 +53,7 @@ function resize() {
     canvas.style.width = `${windowHeight * gameRatio}px`;
     canvas.style.height = `${windowHeight}px`;
   }
-}
+};
 
 window.onload = () => {
   window.game = new Game();

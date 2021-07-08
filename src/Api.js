@@ -4,25 +4,33 @@ export default class Api {
     this.gameId = 'bUiJgC0hdslAYf1iKJLR';
   }
 
-  // get(url, data) {
-  //   return fetch(`${this.baseUrl}/${this.gameId}/scores/`, data);
-  // }
-
-  post(url, body) {
-    return fetch(`${this.baseUrl}games/${this.gameId}/${url}/`, {
-      body: JSON.stringify(body),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-    }).then((res) => res.json());
+  async post(url, body) {
+    try {
+      const res = await fetch(`${this.baseUrl}games/${this.gameId}/${url}/`, {
+        body: JSON.stringify(body),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+      });
+      return res.json();
+    } catch (e) {
+      console.log(e.message);
+      return [];
+    }
   }
 
   createScore(user, score) {
     return this.post('scores', { user, score });
   }
 
-  fetchScores() {
-    return fetch(`${this.baseUrl}games/${this.gameId}/scores`).then((res) => res.json());
+  async fetchScores() {
+    try {
+      const res = await fetch(`${this.baseUrl}games/${this.gameId}/scores`);
+
+      return res.json();
+    } catch (e) {
+      return [];
+    }
   }
 }
