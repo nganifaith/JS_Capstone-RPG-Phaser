@@ -27,7 +27,7 @@ export default class LeaderboardScene extends Phaser.Scene {
     );
 
     this.sys.game.globals.api.fetchScores().then(({ result }) => {
-      this.users = [...result].sort((a, b) => (a.score > b.score ? 1 : -1));
+      this.users = [...result].sort((a, b) => (a.score > b.score ? -1 : 1));
       this.texts = [
         ...this.texts,
         ...this.users.map((user, index) => this.add.text(
