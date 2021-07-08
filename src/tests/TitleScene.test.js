@@ -5,7 +5,7 @@ import TitleScene from '../scenes/TitleScene';
 
 require('jest-canvas-mock');
 
-jest.mock('../Scenes/TitleScene');
+jest.mock('../scenes/TitleScene');
 
 beforeEach(() => {
   TitleScene.mockClear();

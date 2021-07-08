@@ -5,7 +5,7 @@ import GameScene from '../scenes/GameScene';
 
 require('jest-canvas-mock');
 
-jest.mock('../Scenes/GameScene');
+jest.mock('../scenes/GameScene');
 
 beforeEach(() => {
   GameScene.mockClear();

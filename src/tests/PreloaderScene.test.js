@@ -5,7 +5,7 @@ import PreloaderScene from '../scenes/PreloaderScene';
 
 require('jest-canvas-mock');
 
-jest.mock('../Scenes/PreloaderScene');
+jest.mock('../scenes/PreloaderScene');
 
 beforeEach(() => {
   PreloaderScene.mockClear();

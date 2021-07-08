@@ -5,7 +5,7 @@ import CreditsScene from '../scenes/CreditsScene';
 
 require('jest-canvas-mock');
 
-jest.mock('../Scenes/CreditsScene');
+jest.mock('../scenes/CreditsScene');
 
 beforeEach(() => {
   CreditsScene.mockClear();

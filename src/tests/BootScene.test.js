@@ -5,7 +5,7 @@ import BootScene from '../scenes/BootScene';
 
 require('jest-canvas-mock');
 
-jest.mock('../Scenes/BootScene');
+jest.mock('../scenes/BootScene');
 
 beforeEach(() => {
   BootScene.mockClear();

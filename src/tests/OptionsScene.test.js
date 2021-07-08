@@ -5,7 +5,7 @@ import OptionsScene from '../scenes/OptionsScene';
 
 require('jest-canvas-mock');
 
-jest.mock('../Scenes/OptionsScene');
+jest.mock('../scenes/OptionsScene');
 
 beforeEach(() => {
   OptionsScene.mockClear();
